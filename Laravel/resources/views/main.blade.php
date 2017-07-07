@@ -34,9 +34,7 @@ li a:hover {
 
 	<body>
 		<ul>
-			<li><a href='/'>HOME</a></li>
-			<li><a href='about'>ABOUT</a></li>
-			<li><a href='contact'>CONTACT</a></li>
+			@include('partials._header')
 		</ul>
 		@yield('content')
 		<footer>COPYRIGHT SECRET </footer>
