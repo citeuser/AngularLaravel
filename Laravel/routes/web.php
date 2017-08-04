@@ -17,3 +17,5 @@
 Route::get('/', 'MyController@getIndex');
 Route::get('about', 'MyController@getAbout');
 Route::get('contact', 'MyController@getContact');
+
+Route::resource('posts', 'Blog');

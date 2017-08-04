@@ -40,3 +40,4 @@ Route::group(['prefix'=>'admin'], function(){
 		return 'ADMIN LOGIN';
 	});
 });
+Route::resource('jude', 'JudeClark');
