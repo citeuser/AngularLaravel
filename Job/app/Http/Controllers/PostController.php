@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
-use Session;
 
-
-class Blog extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +13,7 @@ class Blog extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-
-        return view('posts.index')->with('posts', $posts);
+        //
     }
 
     /**
@@ -28,8 +23,7 @@ class Blog extends Controller
      */
     public function create()
     {
-        //return what you want to view
-        return view('posts.create');
+        return view('resume');
     }
 
     /**
@@ -40,29 +34,7 @@ class Blog extends Controller
      */
     public function store(Request $request)
     {
-        //Retrieve data from form
-       // $data = request()->all();
-
-        //validate data
-        $this->validate($request, array(
-            'title' => 'required|max:255',
-            'body'  => 'required'
-            ));
-
-        //send data to database
-        //Post::create($data);
-
-        $post = new Post;
-
-        $post->title = $request->title;
-        $post->body = $request->body;
-
-        $post->save();
-
-        Session::flash('success','Successfully Saved!');
-
-        //redirect page
-        return redirect()->route('posts.show', $post->id);
+        //
     }
 
     /**
@@ -73,8 +45,7 @@ class Blog extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('posts.show')->with('post', $post);
+        //
     }
 
     /**

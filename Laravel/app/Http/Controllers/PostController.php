@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use Session;
 
-
-class Blog extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,8 @@ class Blog extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-
-        return view('posts.index')->with('posts', $posts);
+        $post = Post::all();
+        return view('posts.index', $post);
     }
 
     /**
@@ -28,8 +26,7 @@ class Blog extends Controller
      */
     public function create()
     {
-        //return what you want to view
-        return view('posts.create');
+        return view ('posts.create');
     }
 
     /**
@@ -40,18 +37,14 @@ class Blog extends Controller
      */
     public function store(Request $request)
     {
-        //Retrieve data from form
-       // $data = request()->all();
-
-        //validate data
-        $this->validate($request, array(
+        //validate form
+        $this->validate($request, [
             'title' => 'required|max:255',
-            'body'  => 'required'
-            ));
+            'body' => 'required'
 
-        //send data to database
-        //Post::create($data);
+            ]);
 
+        //pass data to database
         $post = new Post;
 
         $post->title = $request->title;
@@ -59,7 +52,8 @@ class Blog extends Controller
 
         $post->save();
 
-        Session::flash('success','Successfully Saved!');
+        //sessions
+        Session::flash('success', 'You successfully submit your post!');
 
         //redirect page
         return redirect()->route('posts.show', $post->id);
@@ -74,7 +68,7 @@ class Blog extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return view('posts.show')->with('post', $post);
+        return view('posts.show')->with('display', $post);
     }
 
     /**

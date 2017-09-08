@@ -11,13 +11,11 @@
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
-Route::get('/', 'PagesController@getWelcome');
-Route::get('/about', 'PagesController@getAbout');
-Route::get('/contact', 'PagesController@getContact');
+Route::resource('api/resume', 'PostController');
 
-Route::resource('posts', 'PostController');
+
 
