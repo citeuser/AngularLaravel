@@ -55,16 +55,41 @@
 					      <input type="email" class="form-control" id="email" placeholder="Enter your valid email address" required>
 					    </div>
 					  </div>
+					   <div class="form-group">
+					    <label for="gender" class="col-sm-2 control-label">Gender : </label>
+					    	 <div class="col-sm-10">
+					    	 <p>
+						      M : <input type="radio" name="gender" id="genderM" value="M" required>
+						      F : <input type="radio" name="gender" id="genderF" value="F">
+						      </p>
+					    	  </div>
+					 </div>
 					  <hr>
-					  <h1>Skills and  :</h1>
+
+					  <h1><b>Educational Background</b></h1>
 					  <div class="form-group">
-					    <label for="firstname" class="col-sm-2 control-label">First Name</label>
+					    <label for="firstname" class="col-sm-2 control-label">First Name : </label>
 					    <div class="col-sm-10">
 					      <input type="text" class="form-control" id="firstname" placeholder="Enter your first name">
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <label for="lastname" class="col-sm-2 control-label">Last Name</label>
+					    <label for="lastname" class="col-sm-2 control-label">Last Name : </label>
+					    <div class="col-sm-10">
+					      <input type="password" class="form-control" id="lastname" placeholder="Enter your last name">
+					    </div>
+					  </div>
+					  <hr>
+
+					  <h1><b>Additional Skills</b></h1>
+					  <div class="form-group">
+					    <label for="firstname" class="col-sm-2 control-label">First Name : </label>
+					    <div class="col-sm-10">
+					      <input type="text" class="form-control" id="firstname" placeholder="Enter your first name">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="lastname" class="col-sm-2 control-label">Last Name : </label>
 					    <div class="col-sm-10">
 					      <input type="password" class="form-control" id="lastname" placeholder="Enter your last name">
 					    </div>
